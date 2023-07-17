@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/white" /> <!-- 矩形的填充颜色 -->
+    <corners android:radius="16dp" /> <!-- 圆角的弧度，单位是 dp -->
+</shape>

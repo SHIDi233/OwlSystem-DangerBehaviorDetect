@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dangerbehaviordetect.Mapper.SuspicionMapper">
+    <select id="getSus" resultType="com.example.dangerbehaviordetect.pojo.Suspicion">
+        select *
+        from Suspicion
+        where
+            cID in (select cID from Member where memberID=#{uID})
+            <if test="cID != null">
+                and cID = #{cID}
+            </if>
+            <if test="year != null">
+                and year(sTime)=#{year}
+            </if>
+            <if test="month != null">
+                and month(sTime)=#{month}
+            </if>
+            <if test="day != null">
+                and day(sTime)=#{day}
+            </if>
+    </select>
+</mapper>

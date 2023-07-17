@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_slideshow"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EBF5F5"
+    tools:context=".ui.slideshow.SlideshowFragment">
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="统计分析"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        android:gravity="center"/>
+    <ImageView
+        android:background="#06ADB3"
+        android:elevation="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_slideshow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"/>
+            <View
+                android:layout_centerHorizontal="true"
+                android:id="@+id/myLine2"
+                android:layout_below="@id/rv_slideshow"
+                android:layout_width="300dp"
+                android:layout_height="5dp"
+                android:background="@drawable/line_drawable"/>
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="10dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="65dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.5">
+            <RelativeLayout
+                android:layout_marginBottom="80dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textColor="#222222"
+                    android:id="@+id/chart_type"
+                    android:text="Bar chart"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/myLine"
+                    android:layout_below="@id/chart_type"
+                    android:layout_width="300dp"
+                    android:layout_height="5dp"
+                    android:background="@drawable/line_drawable"/>
+
+
+                <TextView
+                    android:id="@+id/tv_month"
+                    android:layout_below="@id/myLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="分阶段统计"
+                    android:textSize="15sp"/>
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/barChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="150dp"
+                    android:layout_marginEnd="25dp"
+                    />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:layout_below="@+id/tv_month"
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="按小时计"
+                        android:id="@+id/day"/>
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="按天计"
+                        android:id="@+id/month"/>
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="按周计"
+                        android:id="@+id/year"/>
+                </com.google.android.material.tabs.TabLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+    <View
+        android:layout_centerHorizontal="true"
+        android:id="@+id/myLine3"
+        android:layout_above="@+id/slide_card"
+        android:layout_width="match_parent"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_height="5dp"
+        android:background="@drawable/line_drawable"/>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/slide_card"
+        android:backgroundTint="#06ADB3"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="65dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

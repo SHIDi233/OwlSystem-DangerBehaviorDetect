@@ -1,0 +1,8 @@
+train: F:\tempDirectory\groupWork\danger-behivior-detect-ai-master\yolov5-master\dataset\PoseData\images\train
+val: F:\tempDirectory\groupWork\danger-behivior-detect-ai-master\yolov5-master\dataset\PoseData\images\val
+
+# number of classes
+nc: 2
+
+# class names
+names: ["down","person"]
